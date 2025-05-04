@@ -27,6 +27,7 @@
                         <div>
                             <p>Data do evento</p>
                             <p>Duração Do Evento</p>
+                            <p>R$Valor</p>
                         </div>
                     </div>
                   `);
@@ -68,6 +69,8 @@
                     </select>
                 </label>
 
+                <p>Valor Final : R$ VALOR</p>
+
                 <div class="modal-buttons">
                     <button type="submit">Confirmar Compra</button>
                     <button type="button" id="fecharModal">Fechar</button>
@@ -86,7 +89,7 @@
         });
 
         linkEventos.addEventListener("click", () => {
-            window.location.href = "client_page_eventos.html";
+            window.location.href = "client_page_events.html";
         });
 
         const modal = document.getElementById("modal");
