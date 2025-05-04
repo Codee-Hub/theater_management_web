@@ -16,20 +16,69 @@
         </header>
 
         <main>
-            <h1>Meu Eventos</h1>
-
-            <div class="evento">
-                <h2>Nome Do Evento</h2>
-                <div>
-                    <p>Data do evento</p>
-                </div>
-
-                <div>
-                    <p>Duração Do Evento</p>
-                </div>
-            </div>
+            <script>
+                for (let i = 1; i <= 300; i++) {
+                    document.write(`
+                    <div class="evento">
+                        <h2>Nome Do Evento ${i}</h2>
+                        <div>
+                            <p>Data do evento</p>
+                            <p>Duração Do Evento</p>
+                        </div>
+                    </div>
+                  `);
+                }
+            </script>
         </main>
     </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Criar Novo Evento</h2>
+            <form>
+                <label>
+                    Nome do Evento:
+                    <input type="text" required>
+                </label>
+                <label>
+                    Data do Evento:
+                    <input type="date" required>
+                </label>
+                <label>
+                    Duração:
+                    <input type="text" required>
+                </label>
+                <label>
+                    Sala:
+                    <select required>
+                        <option value="" disabled selected>Selecione uma sala</option>
+                        <option value="Sala Principal">Sala Principal</option>
+                        <option value="Sala Experimental">Sala Experimental</option>
+                        <option value="Auditório">Auditório</option>
+                    </select>
+                </label>
+                <div class="modal-buttons">
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" id="fecharModal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const abrirModal = document.querySelector("header button");
+        const fecharModal = document.getElementById("fecharModal");
+
+        abrirModal.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+        });
+
+        fecharModal.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+    </script>
 
 </body>
 
