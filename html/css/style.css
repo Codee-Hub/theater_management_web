@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body,
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -66,7 +71,7 @@ header {
     border-bottom: 3px solid blue;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
     padding: 10px 0;
 }
@@ -81,6 +86,21 @@ header button {
     font-size: 1em;
     font-weight: bold;
     padding: 10px 20px;
+}
+
+header button:hover {
+    background-color: rgb(212, 213, 252);
+    color: blue;
+    border: 2px solid blue;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+header#header-client-page div {
+    display: flex;
+    justify-content: right;
+    gap: 15px;
+    width: 50%;
 }
 
 /* events list */
@@ -104,6 +124,7 @@ main {
     padding: 7px;
 }
 
+.modal-content div,
 .evento div {
     display: flex;
     justify-content: space-between;

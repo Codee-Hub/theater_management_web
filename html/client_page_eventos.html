@@ -4,23 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Do Organizador</title>
+    <title>Tela Do Cliente</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="container-user-page">
-        <header>
-            <h1>Página do Organizador</h1>
-            <button>Criar Evento</button>
+        <header id="header-client-page">
+            <h1>Página do Cliente</h1>
+            <div>
+                <button id="eventos">Meus Eventos</button>
+                <button id="eventos-busca">Buscar Eventos</button>
+            </div>
         </header>
 
         <main>
             <script>
-                for (let i = 1; i <= 300; i++) {
+                for (let i = 1; i <= 7; i++) {
                     document.write(`
                     <div class="evento">
-                        <h2>Nome Do Evento ${i}</h2>
+                        <h2>Evento Cliente ${i}</h2>
                         <div>
                             <p>Data do evento</p>
                             <p>Duração Do Evento</p>
@@ -35,33 +38,17 @@
     <!-- Modal -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-            <h2>Criar Novo Evento</h2>
-            <form>
-                <label>
-                    Nome do Evento:
-                    <input type="text" required>
-                </label>
-                <label>
-                    Data do Evento:
-                    <input type="date" required>
-                </label>
-                <label>
-                    Duração:
-                    <input type="text" required>
-                </label>
-                <label>
-                    Sala:
-                    <select required>
-                        <option value="" disabled selected>Selecione uma sala</option>
-                        <option value="Sala Principal">Sala Principal</option>
-                        <option value="Sala Experimental">Sala Experimental</option>
-                        <option value="Auditório">Auditório</option>
-                    </select>
-                </label>
-                <div class="modal-buttons">
-                    <button type="submit">Cadastrar</button>
-                    <button type="button" id="fecharModal">Fechar</button>
-                </div>
+
+            <h2>Nome Do Evento ${i}</h2>
+            <div>
+                <p>Data do evento</p>
+                <p>Duração Do Evento</p>
+            </div>
+
+            <div class="modal-buttons">
+                <button type="button" id="fecharModal">Fechar</button>
+            </div>
+
             </form>
         </div>
     </div>
