@@ -11,7 +11,7 @@
 <body>
     <div class="container-user-page">
         <header id="header-client-page">
-            <h1>Página do Cliente</h1>
+            <h1>Página do Cliente - Meus Eventos</h1>
             <div>
                 <button id="eventos">Meus Eventos</button>
                 <button id="eventos-busca">Buscar Eventos</button>
@@ -23,7 +23,7 @@
                 for (let i = 1; i <= 7; i++) {
                     document.write(`
                     <div class="evento">
-                        <h2>Evento Cliente ${i}</h2>
+                        <h2>MEU EVENTO ${i}</h2>
                         <div>
                             <p>Data do evento</p>
                             <p>Duração Do Evento</p>
@@ -54,6 +54,17 @@
     </div>
 
     <script>
+        const linkBusca = document.getElementById("eventos-busca");
+        const linkEventos = document.getElementById("eventos");
+
+        linkBusca.addEventListener("click", () => {
+            window.location.href = "client_page_busca.html";
+        });
+
+        linkEventos.addEventListener("click", () => {
+            window.location.href = "client_page_events.html";
+        });
+
         const modal = document.getElementById("modal");
         const abrirModal = document.querySelector("header button");
         const fecharModal = document.getElementById("fecharModal");

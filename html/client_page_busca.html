@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Do Cliente</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-user-page">
+        <header id="header-client-page">
+            <h1>Página do Cliente - Todos Os Eventos</h1>
+            <div>
+                <button id="eventos">Meus Eventos</button>
+                <button id="eventos-busca">Buscar Eventos</button>
+            </div>
+        </header>
+
+        <main>
+            <script>
+                for (let i = 1; i <= 300; i++) {
+                    document.write(`
+                    <div class="evento">
+                        <h2>Evento A PARA COMPRAR ${i}</h2>
+                        <div>
+                            <p>Data do evento</p>
+                            <p>Duração Do Evento</p>
+                        </div>
+                    </div>
+                  `);
+                }
+            </script>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Comprar Ingresso</h2>
+            <form>
+                <label>
+                    Tipo de Ingresso:
+                    <select required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="meia">Meia</option>
+                        <option value="inteira">Inteira</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                </label>
+
+                <label>
+                    Poltrona:
+                    <select id="poltrona-select" required>
+                        <option value="" disabled selected>Selecione</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Método de Pagamento:
+                    <select required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="pix">PIX</option>
+                        <option value="credito">Cartão de Crédito</option>
+                        <option value="debito">Cartão de Débito</option>
+                    </select>
+                </label>
+
+                <div class="modal-buttons">
+                    <button type="submit">Confirmar Compra</button>
+                    <button type="button" id="fecharModal">Fechar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        const linkBusca = document.getElementById("eventos-busca");
+        const linkEventos = document.getElementById("eventos");
+
+        linkBusca.addEventListener("click", () => {
+            window.location.href = "client_page_busca.html";
+        });
+
+        linkEventos.addEventListener("click", () => {
+            window.location.href = "client_page_eventos.html";
+        });
+
+        const modal = document.getElementById("modal");
+        const abrirModal = document.querySelector("header button");
+        const fecharModal = document.getElementById("fecharModal");
+
+        abrirModal.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+        });
+
+        fecharModal.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+
+        const events = document.querySelectorAll('.evento');
+
+        events.forEach(event => {
+            event.addEventListener("click", () => {
+                modal.classList.remove("hidden");
+            });
+        });
+
+        const selectPoltrona = document.getElementById("poltrona-select");
+
+        for (let i = 1; i <= 100; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            selectPoltrona.appendChild(option);
+        }
+
+    </script>
+
+</body>
+
+</html>
