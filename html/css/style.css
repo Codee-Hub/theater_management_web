@@ -27,3 +27,19 @@ body {
     align-items: center;
     border: 1px solid red;
 }
+
+#form div {
+    margin: 5px 0;
+    display: flex;
+    width: 42%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#form div a {
+    font-weight: bold;
+    color: black;
+    padding: 3px 5px;
+    text-decoration: none;
+    border: 2px solid gray;
+}
