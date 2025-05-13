@@ -10,6 +10,7 @@ html {
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image:  url(../imgs/Back.png);
 }
 
 /* Login Page */
@@ -21,8 +22,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 60px;
     align-items: center;
-    background-color: aliceblue;
+}
+
+.container h1 {
+    color: white;
+    font-size: 3em;
 }
 
 #form {
@@ -32,13 +38,41 @@ body {
     justify-content: center;
     text-align: center;
     align-items: center;
-    border: 1px solid red;
+    background-color: white;
+    padding: 15px 0;
+    border-radius: 20px;
+    border: 5px solid rgb(0, 0, 0);;
+}
+
+#form h2{
+    margin: 0 0 15px;
+    color: rgb(185, 19, 19);
+}
+
+#form label {
+    font-size: 1.1em;
+    color: rgb(185, 19, 19);
+}
+
+#form input {
+    margin: 5px 0 15px;
+    padding: 5px 15px;
+}
+
+#form input:hover {
+    margin: 5px 0 15px;
+    border: 2px solid rgb(185, 19, 19);;
+}
+
+#form input:focus {
+    margin: 5px 0 15px;
+    border: 2px solid rgb(185, 19, 19);;
 }
 
 #form div {
     margin: 5px 0;
     display: flex;
-    width: 42%;
+    width: 50%;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -48,7 +82,12 @@ body {
     color: black;
     padding: 3px 5px;
     text-decoration: none;
-    border: 2px solid gray;
+    color: rgb(185, 19, 19);
+    border: 2px solid rgb(185, 19, 19);;
+}
+
+#form div a:hover {
+    padding: 4px 6px;
 }
 
 /* User Page */
