@@ -83,7 +83,7 @@ body {
     padding: 3px 5px;
     text-decoration: none;
     color: rgb(185, 19, 19);
-    border: 2px solid rgb(185, 19, 19);;
+    border: 2px solid rgb(185, 19, 19);
 }
 
 #form div a:hover {
@@ -99,15 +99,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
-    border: 3px solid rgb(212, 213, 252);
+    border: 5px solid rgb(0, 0, 0);;
 }
 
 /* Header */
 
 header {
-    background-color: rgb(212, 213, 252);
-    border-bottom: 3px solid blue;
+    background-color: rgb(87, 2, 2);
+    border-bottom: 3px solid rgb(0, 0, 0);
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -116,23 +115,21 @@ header {
 }
 
 header h1 {
-    color: blue;
+    color: white;
 }
 
 header button {
-    color: blue;
-    border: 2px solid blue;
+    color: white;
+    background-color: rgb(134, 0, 0) ;
+    border: 2px solid white;
     font-size: 1em;
     font-weight: bold;
     padding: 10px 20px;
 }
 
 header button:hover {
-    background-color: rgb(212, 213, 252);
-    color: blue;
-    border: 2px solid blue;
-    font-size: 1em;
     font-weight: bold;
+    padding: 11px 21px
 }
 
 header#header-client-page div {
@@ -199,31 +196,61 @@ main {
 
 .modal-content h2 {
     margin-top: 0;
-    color: blue;
+    color: rgb(185, 19, 19);
     text-align: center;
 }
 
-.modal-content label {
+.modal-content form {
     display: flex;
     flex-direction: column;
-    font-weight: bold;
 }
 
-.modal-content input,
-.modal-content select {
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.modal-buttons {
+.modal-content label {
+    font-size: 1.1em;
+    color: rgb(185, 19, 19);
     display: flex;
     justify-content: space-between;
 }
 
+.modal-content input,
+.modal-content select {
+    margin: 5px 0 15px;
+    padding: 5px 15px;
+    width: 50%;
+}
+
+.modal-content select:hover,
+.modal-content input:hover {
+    margin: 5px 0 15px;
+    border: 2px solid rgb(185, 19, 19);;
+}
+
+.modal-content select:focus,
+.modal-content input:focus {
+    margin: 5px 0 15px;
+    border: 2px solid rgb(185, 19, 19);;
+}
+
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
 .modal-buttons button {
-    padding: 0.5rem 1rem;
     font-weight: bold;
-    cursor: pointer;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: rgb(185, 19, 19);
+    border: 2px solid rgb(185, 19, 19);
+}
+
+.modal-buttons button:hover {
+    font-weight: bold;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color:rgb(185, 19, 19) ;
+    border: 2px solid rgb(255, 255, 255);
 }
