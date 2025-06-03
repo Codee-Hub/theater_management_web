@@ -90,6 +90,34 @@ body {
     padding: 4px 6px;
 }
 
+#form div button {
+    font-weight: bold;
+    color: black;
+    padding: 3px 5px;
+    text-decoration: none;
+    color: rgb(185, 19, 19);
+    border: 2px solid rgb(185, 19, 19);
+}
+
+#form div button:hover {
+    padding: 4px 6px;
+}
+
+#form button {
+    font-weight: bold;
+    color: rgb(185, 19, 19);
+    padding: 3px 5px;
+    border: 2px solid rgb(185, 19, 19);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#form button:hover {
+    padding: 4px 6px;
+}
+
+
 /* User Page */
 
 .container-user-page {

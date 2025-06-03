@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela De Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="../js/login.js"></script>
 </head>
 
 <body>
@@ -16,16 +17,17 @@
             <h2>Fazer Login</h2>
 
             <label for="email">Login</label>
-            <input name="email" type="email">
+            <input id="email" name="email" type="email" required>
 
             <label for="password">Senha</label>
-            <input name="password" type="password">
+            <input id="password" name="password" type="password" required>
 
             <div>
-                <a href="client_page_events.html">Entrar</a>
+                <button type="submit">Entrar</button>
                 <a href="register_page.html">Criar Conta</a>
             </div>
         </form>
+
     </div>
 
 </body>

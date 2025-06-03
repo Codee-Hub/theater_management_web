@@ -15,20 +15,8 @@
             <button>Criar Evento</button>
         </header>
 
-        <main>
-            <script>
-                for (let i = 1; i <= 300; i++) {
-                    document.write(`
-                    <div class="evento">
-                        <h2>Nome Do Evento ${i}</h2>
-                        <div>
-                            <p>Data do evento</p>
-                            <p>Duração Do Evento</p>
-                        </div>
-                    </div>
-                  `);
-                }
-            </script>
+        <main id="eventosContainer">
+    <!-- Eventos serão inseridos aqui via JS -->
         </main>
     </div>
 
@@ -36,30 +24,29 @@
     <div id="modal" class="modal hidden">
         <div class="modal-content">
             <h2>Criar Novo Evento</h2>
-            <form>
+
+            <form id="formEvento">
                 <label>
                     Nome do Evento:
-                    <input type="text" required>
+                    <input id="nomeEvento" type="text" required>
                 </label>
                 <label>
                     Data do Evento:
-                    <input type="date" required>
+                    <input id="dataEvento" type="date" required>
                 </label>
                 <label>
                     Duração:
-                    <input type="text" required>
+                    <input id="duracaoEvento" type="text" required>
                 </label>
                 <label>
                     Preço Base:
-                    <input type="text" required>
+                    <input id="precoEvento" type="text" required>
                 </label>
                 <label>
                     Sala:
-                    <select required>
+                    <select id="salaEvento" required>
                         <option value="" disabled selected>Selecione uma sala</option>
-                        <option value="Sala Principal">Sala Principal</option>
-                        <option value="Sala Experimental">Sala Experimental</option>
-                        <option value="Auditório">Auditório</option>
+                        <!-- As salas serão inseridas dinamicamente via JS -->
                     </select>
                 </label>
                 <div class="modal-buttons">
@@ -67,32 +54,11 @@
                     <button type="button" id="fecharModal">Fechar</button>
                 </div>
             </form>
+
         </div>
     </div>
 
-    <script>
-        const modal = document.getElementById("modal");
-        const abrirModal = document.querySelector("header button");
-        const fecharModal = document.getElementById("fecharModal");
-
-        abrirModal.addEventListener("click", () => {
-            modal.classList.remove("hidden");
-        });
-
-        fecharModal.addEventListener("click", () => {
-            modal.classList.add("hidden");
-        });
-
-        const events = document.querySelectorAll('.evento');
-
-        events.forEach(event => {
-            event.addEventListener("click", () => {
-                modal.classList.remove("hidden");
-            });
-        });
-
-    </script>
-
+    <script src="../js/organizer.js"></script>
 </body>
 
 </html>
