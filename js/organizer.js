@@ -26,7 +26,6 @@ async function carregarSalas() {
         selectSala.innerHTML = '<option value="" disabled selected>Selecione uma sala</option>';
 
         salas.forEach(sala => {
-            console.log(sala.roomNumber);
             const option = document.createElement("option");
             option.value = sala.id;
             option.textContent = `Sala ${sala.roomNumber}`;
@@ -51,8 +50,8 @@ async function carregarEventos() {
             const div = document.createElement("div");
             div.className = "evento";
             div.innerHTML = `
-                <h2>${evento.nome}</h2>
-                <div>
+                <h2 style="color:rgb(185, 19, 19)">${evento.nome}</h2>
+                <div style="display: flex; justify-content: space-between; width: 100%">
                     <p>Data do evento: ${new Date(evento.date).toLocaleDateString()}</p>
                     <p>Duração: ${evento.durationInMinutes} Minutos</p>
                 </div>
@@ -68,12 +67,17 @@ async function carregarEventos() {
 document.getElementById("formEvento").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const precoBase = parseInt(document.getElementById("precoEvento").value);
+
     const novoEvento = {
         nome: document.getElementById("nomeEvento").value,
         date: new Date(document.getElementById("dataEvento").value).toISOString(),
         durationInMinutes: document.getElementById("duracaoEvento").value,
-        idRoom: parseInt(document.getElementById("salaEvento").value)
+        idRoom: parseInt(document.getElementById("salaEvento").value),
+        precoBase : parseInt(document.getElementById("precoEvento").value)
     };
+
+    console.log(precoBase)
 
     try {
         const response = await fetch("http://localhost:8080/spectacles", {

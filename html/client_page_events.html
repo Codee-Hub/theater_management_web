@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tela Do Cliente</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -18,79 +18,30 @@
             </div>
         </header>
 
-        <main>
-            <script>
-                for (let i = 1; i <= 7; i++) {
-                    document.write(`
-                    <div class="evento">
-                        <h2>MEU EVENTO ${i}</h2>
-                        <div>
-                            <p>Data do evento</p>
-                            <p>Duração Do Evento</p>
-                        </div>
-                    </div>
-                  `);
-                }
-            </script>
+        <main id="main-content">
+            <!-- Conteúdo dinâmico carregado pelo JS -->
         </main>
     </div>
 
     <!-- Modal -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-
-            <h2>Nome Do Evento ${i}</h2>
+            <h2 id="modal-title">Nome Do Evento</h2>
             <div>
                 <p>Data do evento</p>
                 <p>Duração Do Evento</p>
             </div>
             <div>
                 <p>Poltrona</p>
-                <p>Preco do evento</p>
+                <p>Preço do evento</p>
             </div>
-
             <div class="modal-buttons">
                 <button type="button" id="fecharModal">Fechar</button>
             </div>
-
-            </form>
         </div>
     </div>
 
-    <script>
-        const linkBusca = document.getElementById("eventos-busca");
-        const linkEventos = document.getElementById("eventos");
-
-        linkBusca.addEventListener("click", () => {
-            window.location.href = "client_page_busca.html";
-        });
-
-        linkEventos.addEventListener("click", () => {
-            window.location.href = "client_page_events.html";
-        });
-
-        const modal = document.getElementById("modal");
-        const abrirModal = document.querySelector("header button");
-        const fecharModal = document.getElementById("fecharModal");
-
-        abrirModal.addEventListener("click", () => {
-            modal.classList.remove("hidden");
-        });
-
-        fecharModal.addEventListener("click", () => {
-            modal.classList.add("hidden");
-        });
-
-        const events = document.querySelectorAll('.evento');
-
-        events.forEach(event => {
-            event.addEventListener("click", () => {
-                modal.classList.remove("hidden");
-            });
-        });
-
-    </script>
-
+    <script src="../js/clientsEvents.js"></script>
 </body>
 
 </html>

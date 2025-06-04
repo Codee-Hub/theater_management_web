@@ -18,21 +18,8 @@
             </div>
         </header>
 
-        <main>
-            <script>
-                for (let i = 1; i <= 300; i++) {
-                    document.write(`
-                    <div class="evento">
-                        <h2>Evento A PARA COMPRAR ${i}</h2>
-                        <div>
-                            <p>Data do evento</p>
-                            <p>Duração Do Evento</p>
-                            <p>R$Valor</p>
-                        </div>
-                    </div>
-                  `);
-                }
-            </script>
+        <main id="eventosContainer">
+            <!-- Eventos serão inseridos aqui via JS -->
         </main>
     </div>
 
@@ -43,13 +30,11 @@
             <form id="form-pagina">
                 <label>
                     Tipo de Ingresso:
-                    <select required>
+                    <select name="tipoIngresso" id="tipoIngresso-select" required>
                         <option value="" disabled selected>Selecione</option>
-                        <option value="meia">Meia</option>
-                        <option value="inteira">Inteira</option>
-                        <option value="vip">VIP</option>
                     </select>
                 </label>
+
 
                 <label>
                     Poltrona:
@@ -58,71 +43,25 @@
                     </select>
                 </label>
 
-
                 <label>
-                    Método de Pagamento:
-                    <select required>
+                        Método de Pagamento:
+                    <select name="pagamento" id="pagamento-select" required>
                         <option value="" disabled selected>Selecione</option>
-                        <option value="pix">PIX</option>
-                        <option value="credito">Cartão de Crédito</option>
-                        <option value="debito">Cartão de Débito</option>
                     </select>
                 </label>
 
-                <p>Valor Final : <span style="color: black;">R$ VALOR</span></p>
+
+                <p>Valor Base : <span id="valor-base" style="color: black;"></span></p>
 
                 <div class="modal-buttons">
                     <button type="submit">Confirmar Compra</button>
                     <button type="button" id="fecharModal">Fechar</button>
                 </div>
             </form>
-
         </div>
     </div>
 
-    <script>
-        const linkBusca = document.getElementById("eventos-busca");
-        const linkEventos = document.getElementById("eventos");
-
-        linkBusca.addEventListener("click", () => {
-            window.location.href = "client_page_busca.html";
-        });
-
-        linkEventos.addEventListener("click", () => {
-            window.location.href = "client_page_events.html";
-        });
-
-        const modal = document.getElementById("modal");
-        const abrirModal = document.querySelector("header button");
-        const fecharModal = document.getElementById("fecharModal");
-
-        abrirModal.addEventListener("click", () => {
-            modal.classList.remove("hidden");
-        });
-
-        fecharModal.addEventListener("click", () => {
-            modal.classList.add("hidden");
-        });
-
-        const events = document.querySelectorAll('.evento');
-
-        events.forEach(event => {
-            event.addEventListener("click", () => {
-                modal.classList.remove("hidden");
-            });
-        });
-
-        const selectPoltrona = document.getElementById("poltrona-select");
-
-        for (let i = 1; i <= 100; i++) {
-            const option = document.createElement("option");
-            option.value = i;
-            option.textContent = i;
-            selectPoltrona.appendChild(option);
-        }
-
-    </script>
-
+    <script src="../js/clientBusca.js"></script>
 </body>
 
 </html>
