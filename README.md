@@ -23,6 +23,24 @@ O sistema suporta diferentes **papéis de usuário**, garantindo que as funciona
 
 ---
 
+### 🎫 Telas daa aplicação
+
+- Tela de Login.
+![Tela de Login](https://github.com/Codee-Hub/theater_management_web/blob/main/imgs/tela_de_login.jpg)
+
+- Tela de cadastro
+![Tela de Cadastro](https://github.com/Codee-Hub/theater_management_web/blob/main/imgs/tela_de_cadastro.jpg)
+
+- Tela de Eventos
+![Tela de Eventos](https://github.com/Codee-Hub/theater_management_web/blob/main/imgs/pagina_de_teatros.jpg)
+
+- Tela de Compra
+![Tela de Compra](https://github.com/Codee-Hub/theater_management_web/blob/main/imgs/pagina_de_compra.jpg)
+
+- Tela do Adminstrador
+![Tela de Compra](https://github.com/Codee-Hub/theater_management_web/blob/main/imgs/tela_do_administrador.jpg)
+
+
 ### 👤 Painel do Cliente
 
 - **🎫 Meus Eventos**: Lista de todos os ingressos comprados.
